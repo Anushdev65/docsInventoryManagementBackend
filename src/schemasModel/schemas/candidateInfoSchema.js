@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, SchemaType } from "mongoose";
 
 const candidateInfoSchema = Schema(
   {
@@ -52,6 +52,11 @@ const candidateInfoSchema = Schema(
         type: String,
       },
     ],
+
+    associatedCompany: {
+      type: Schema.Types.ObjectId,
+      ref: "AssociatedCompany",
+    },
   },
   { timestamps: true }
 );
